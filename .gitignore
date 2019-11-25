@@ -1,0 +1,6 @@
+.vscode/*
+.history
+.settings/
+.classpath
+.project
+target/
