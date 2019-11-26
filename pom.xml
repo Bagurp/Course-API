@@ -4,8 +4,14 @@
   <groupId>com.bagur.course.api</groupId>
   <artifactId>course-api</artifactId>
   <packaging>jar</packaging>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>courseApi</name>
+  <version>0.1${minor-version}</version>
+  <name>Course Api</name>
+  <description>Sample REST service for Topics and Courses</description>
+
+  <properties>
+    <java.version>1.8</java.version>
+    <minor-version>-SNAPSHOT</minor-version>
+  </properties>
 
   <parent>
       <groupId>org.springframework.boot</groupId>
@@ -44,8 +50,4 @@
     </dependency>
   </dependencies>
 
-  <properties>
-    <java.version>1.8</java.version>
-  </properties>
-  
 </project>
