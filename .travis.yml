@@ -1,8 +1,19 @@
 language: java
+sudo: false
 jdk: oraclejdk11
 
+env:
+  - RELEASE_VERSION=v0.1 MINOR_VERSION=-SNAPSHOT
+
+before_deploy:
+  # Set up git user name and tag this commit
+  - export GIT_TAG=$TRAVIS_BRANCH-$RELEASE_VERSION.$TRAVIS_BUILD_NUMBER$MINOR_VERSION
+  - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
+
+  # Build and deploy to GitHub Packages
 install: true
-script: mvn clean install
+script: 
+  - mvn clean install
 
 cache:
   directories:
