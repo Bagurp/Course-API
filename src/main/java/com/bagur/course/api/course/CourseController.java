@@ -37,7 +37,7 @@ public class CourseController {
     // POST, PUT - Adds / Updates a Course
     @RequestMapping(method = {RequestMethod.POST, RequestMethod.PUT}, value = {"/topics/{topicId}/courses", "/topics/{topicId}/courses/{courseId}"})
     @ResponseBody
-    public ResponseEntity<Course> updateCourse(@RequestBody Course course, @PathVariable String topicId) {
+    public ResponseEntity<Course> AddOrUpdateCourse(@RequestBody Course course, @PathVariable String topicId) {
         course.setTopic(new Topic(topicId, "", ""));
         return ResponseEntity.status(HttpStatus.OK).body(courseService.AddOrUpdateCourse(course));
     }
