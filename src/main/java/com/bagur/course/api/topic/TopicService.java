@@ -20,7 +20,7 @@ public class TopicService {
     }
 
     public Topic getTopic(String id) {
-        return topicRepository.findByTopicId(id);
+        return topicRepository.findOne(id);
     }
 
     public void addTopic(Topic topic) {
@@ -32,6 +32,6 @@ public class TopicService {
     }
 
     public void deleteTopic(String id) {
-        topicRepository.deleteById(id);
+        topicRepository.delete(id);
     }
 }
