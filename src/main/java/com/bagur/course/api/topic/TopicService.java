@@ -23,12 +23,9 @@ public class TopicService {
         return topicRepository.findOne(id);
     }
 
-    public void addTopic(Topic topic) {
-        topicRepository.save(topic);
-    }
-
-    public void updateTopic(Topic topic) {
-        topicRepository.save(topic);
+    // Updates a topic if one exists, otherwise creates a topic.
+    public Topic AddOrUpdateTopic(Topic topic) {
+        return topicRepository.save(topic);
     }
 
     public void deleteTopic(String id) {

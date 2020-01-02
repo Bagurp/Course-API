@@ -23,12 +23,9 @@ public class CourseService {
         return courseRepository.findOne(id);
     }
 
-    public void addCourse(Course course) {
-        courseRepository.save(course);
-    }
-
-    public void updateCourse(Course course) {
-        courseRepository.save(course);
+    // Updates a course if one exists, otherwise creates a course.
+    public Course AddOrUpdateCourse(Course course) {
+        return courseRepository.save(course);
     }
 
     public void deleteCourse(String id) {
