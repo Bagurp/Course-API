@@ -4,7 +4,7 @@
   <groupId>com.bagur.course.api</groupId>
   <artifactId>course-api</artifactId>
   <packaging>jar</packaging>
-  <version>0.1${minor-version}</version>
+  <version>0.2${minor-version}</version>
   <name>Course Api</name>
   <description>Sample REST service for Topics and Courses</description>
 
