@@ -5,10 +5,15 @@ import java.util.List;
 import com.bagur.course.api.topic.Topic;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -29,23 +34,19 @@ public class CourseController {
         return courseService.getCourse(courseId);
     }
 
-    // POST - Adds a Course
-    @RequestMapping(method = RequestMethod.POST, value = "/topics/{topicId}/courses")
-    public void addCourse(@RequestBody Course course, @PathVariable String topicId) {
+    // POST, PUT - Adds / Updates a Course
+    @RequestMapping(method = {RequestMethod.POST, RequestMethod.PUT}, value = {"/topics/{topicId}/courses", "/topics/{topicId}/courses/{courseId}"})
+    @ResponseBody
+    public ResponseEntity<Course> AddOrUpdateCourse(@RequestBody Course course, @PathVariable String topicId) {
         course.setTopic(new Topic(topicId, "", ""));
-        courseService.addCourse(course);
-    }
-
-    // PUT - Updates a Course
-    @RequestMapping(method = RequestMethod.PUT, value = "/topics/{topicId}/courses/{courseId}")
-    public void updateCourse(@RequestBody Course course, @PathVariable String topicId) {
-        course.setTopic(new Topic(topicId, "", ""));
-        courseService.updateCourse(course);
+        return ResponseEntity.status(HttpStatus.OK).body(courseService.AddOrUpdateCourse(course));
     }
     
     // DELETE - Deletes a Course
     @RequestMapping(method = RequestMethod.DELETE, value = "/topics/{topicId}/courses/{courseId}")
-    public void deleteCourse(@PathVariable String courseId) {
+    @ResponseStatus
+    public ResponseEntity deleteCourse(@PathVariable String courseId) {
         courseService.deleteCourse(courseId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
