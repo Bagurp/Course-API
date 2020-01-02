@@ -1,10 +1,15 @@
 # Changelog
 
-### [0.1]
+### 0.2
+- Update Response Codes
+- Add Etag to project
+- Fix Actuator Sensitivity
+
+### 0.1
 
 - Update Pom version
 
-### [0.0.1]
+### 0.0.1
 
 - Adds CourseApi and RestApi to project code
 - Adds SpringBoot dependencies
