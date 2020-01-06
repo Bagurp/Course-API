@@ -4,7 +4,7 @@
   <groupId>com.bagur.course.api</groupId>
   <artifactId>course-api</artifactId>
   <packaging>jar</packaging>
-  <version>0.2${minor-version}</version>
+  <version>0.3${minor-version}</version>
   <name>Course Api</name>
   <description>Sample REST service for Topics and Courses</description>
 
@@ -54,9 +54,29 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.12</version>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>org.jmockit</groupId>
+      <artifactId>jmockit</artifactId>
+      <version>1.8</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-swagger2</artifactId>
+      <version>2.9.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-swagger-ui</artifactId>
+      <version>2.9.2</version>
+    </dependency>
+
   </dependencies>
 
 </project>

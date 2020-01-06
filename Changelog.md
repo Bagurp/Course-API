@@ -1,6 +1,12 @@
 # Changelog
 
+### 0.3
+
+- Update Junit version to 4.12
+- Adds Swagger UI to the project
+
 ### 0.2
+
 - Update Response Codes
 - Add Etag to project
 - Fix Actuator Sensitivity

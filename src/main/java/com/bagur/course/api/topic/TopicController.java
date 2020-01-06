@@ -20,13 +20,13 @@ public class TopicController {
     private TopicService topicService;
 
     // GET - gets all Topics
-    @RequestMapping("/topics")
+    @RequestMapping(method = RequestMethod.GET, value = "/topics")
     public List<Topic> getAllTopics() {
         return topicService.getAllTopics();
     }
 
     // GET - Gets one Topic
-    @RequestMapping("/topics/{id}")
+    @RequestMapping(method = RequestMethod.GET, value = "/topics/{id}")
     public Topic getTopic(@PathVariable String id) {
         return topicService.getTopic(id);
     }

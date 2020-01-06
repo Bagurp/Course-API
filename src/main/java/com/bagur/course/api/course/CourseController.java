@@ -5,7 +5,6 @@ import java.util.List;
 import com.bagur.course.api.topic.Topic;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,13 +22,13 @@ public class CourseController {
     private CourseService courseService;
 
     // GET - gets all Courses
-    @RequestMapping("/topics/{topicId}/courses")
+    @RequestMapping(method = RequestMethod.GET, value = "/topics/{topicId}/courses")
     public List<Course> getAllCourses(@PathVariable String topicId) {
         return courseService.getAllCourses(topicId);
     }
 
     // GET - Gets one Course
-    @RequestMapping("/topics/{topicId}/courses/{courseId}")
+    @RequestMapping(method = RequestMethod.GET, value = "/topics/{topicId}/courses/{courseId}")
     public Course getTopic(@PathVariable String courseId) {
         return courseService.getCourse(courseId);
     }

@@ -133,3 +133,14 @@ The following methods are supported by the Api for *Courses* controller -
 **DELETE**
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	```	http://localhost:8080/topics/OS/courses/Scheduling```
+
+#### *Links*
+_______________________________________________
+
+**UI DOCS**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	```http://localhost:8080/course-api/swagger-ui.html```
+
+**JSON DOCS**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	```http://localhost:8080/course-api/v2/api-docs```
