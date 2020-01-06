@@ -2,6 +2,7 @@ package com.bagur.course.api.topic;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,12 @@ public class TopicService {
     }
 
     public Topic getTopic(String id) {
-        return topicRepository.findOne(id);
+        Optional<Topic> result = topicRepository.findById(id);
+        if(!result.isPresent()) {
+            return null;
+        }
+
+        return result.get();
     }
 
     // Updates a topic if one exists, otherwise creates a topic.
@@ -29,6 +35,6 @@ public class TopicService {
     }
 
     public void deleteTopic(String id) {
-        topicRepository.delete(id);
+        topicRepository.deleteById(id);
     }
 }

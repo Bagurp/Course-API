@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.4
+
+- Update Spring Boot Parent version to 2.2.2
+
 ### 0.3
 
 - Update Junit version to 4.12
