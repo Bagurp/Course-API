@@ -22,13 +22,13 @@ public class CourseController {
     private CourseService courseService;
 
     // GET - gets all Courses
-    @RequestMapping("/topics/{topicId}/courses")
+    @RequestMapping(method = RequestMethod.GET, value = "/topics/{topicId}/courses")
     public List<Course> getAllCourses(@PathVariable String topicId) {
         return courseService.getAllCourses(topicId);
     }
 
     // GET - Gets one Course
-    @RequestMapping("/topics/{topicId}/courses/{courseId}")
+    @RequestMapping(method = RequestMethod.GET, value = "/topics/{topicId}/courses/{courseId}")
     public Course getTopic(@PathVariable String courseId) {
         return courseService.getCourse(courseId);
     }
